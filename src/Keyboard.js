@@ -19,12 +19,15 @@ export default class Keyboard extends PureComponent {
 		defaultKeyboard: PropTypes.string,
 		secondaryKeyboard: PropTypes.string,
 		hideKeyboard: PropTypes.func,
+		showPreview: PropTypes.bool,
+		value: PropTypes.string
 	};
 
 	static defaultProps = {
 		rightButtons: [],
 		isFirstLetterUppercase: false,
 		defaultKeyboard: 'us',
+		value: ""
 	};
 
 	constructor(props) {
@@ -183,6 +186,11 @@ export default class Keyboard extends PureComponent {
 
 		return (
 			<div className="keyboard keyboard-wrapper">
+                { this.props.showPreview &&
+					<div className="keyboard-row keyboard-preview">
+						<input value={this.props.value} />
+					</div>
+                }
 				<div className="keyboard-row">
 					{numbers.map((button) =>
 						<KeyboardButton

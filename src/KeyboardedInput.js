@@ -65,6 +65,8 @@ class KeyboardedInput extends React.Component {
             defaultKeyboard={this.props.defaultKeyboard}
             secondaryKeyboard={this.props.secondaryKeyboard}
             inputNode={this.refs.input}
+            value={this.refs.value}
+            showPreview={this.refs.showPreview}
           />
         }
       </div>
