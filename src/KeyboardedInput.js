@@ -47,7 +47,7 @@ class KeyboardedInput extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={this.props.className}>
         <input 
 	  defaultValue={this.props.value} 
 	  type={this.props.type} 
